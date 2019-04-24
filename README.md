@@ -1,2 +1,2 @@
-# FseFinalProject
+# FseFinal
 Project Manager Application
