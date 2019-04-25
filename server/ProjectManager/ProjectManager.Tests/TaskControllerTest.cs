@@ -92,9 +92,9 @@ namespace ProjectManager.Test
             var users = new TestDbSet<DAC.User>();
             users.Add(new DAC.User()
             {
-                Employee_ID = "414942",
-                First_Name = "Gaganeswar",
-                Last_Name = "Rana",
+                Employee_ID = "654219",
+                First_Name = "Rajesh",
+                Last_Name = "Ray",
                 User_ID = 123,
                 Task_ID = 123
             });
@@ -111,9 +111,9 @@ namespace ProjectManager.Test
                 Status = 0,
                 User = new User()
                 {
-                    FirstName = "Gaganeswar",
-                    LastName = "Rana",
-                    EmployeeId = "543210",
+                    FirstName = "Rajesh",
+                    LastName = "Ray",
+                    EmployeeId = "654219",
                     UserId = 1000
                 }
             };

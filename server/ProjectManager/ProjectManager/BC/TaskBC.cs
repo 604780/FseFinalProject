@@ -85,11 +85,11 @@ namespace ProjectManager.BC
 
                     var editDetails = (from editUser in dbContext.Users
                                        where editUser.User_ID.ToString().Contains(task.User.UserId.ToString())
-                                       select editUser).First();
+                                       select editUser).ToList();
                     // Modify existing records
-                    if (editDetails != null)
+                    if (editDetails != null && editDetails.Count>0)
                     {
-                        editDetails.Task_ID = taskDetail.Task_ID;
+                        editDetails.First().Task_ID = taskDetail.Task_ID;
                     }
                 }
                 return dbContext.SaveChanges();
