@@ -1,6 +1,8 @@
 import { Response } from '@angular/http';
 import { Observable } from 'rxjs';
 import { ServiceError } from '../models/serviceerror';
+
+
 export class BaseService {
     constructor() { }
     protected extractData(res: Response) {
@@ -16,7 +18,7 @@ export class BaseService {
         }
     }
     public baseurl(): string {
-        return '';
+        return 'http://localhost:50830/';
     }
 
     protected handleError(error: any) {

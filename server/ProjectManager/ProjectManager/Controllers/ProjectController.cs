@@ -6,9 +6,11 @@ using ProjectManager.Models;
 using ProjectManager.BC;
 using System.Web.Http;
 using ProjectManager.ActionFilters;
+using System.Web.Http.Cors;
 
 namespace ProjectManager.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ProjectController : ApiController
     {
         ProjectBC projObjBC = null;

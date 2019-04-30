@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Response } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../models/user';
 import { map,catchError } from 'rxjs/operators';
@@ -7,7 +8,7 @@ import { BaseService } from './base.service';
 
 @Injectable()
 export class UserService extends BaseService {
-    constructor(private http: Http) {
+    constructor(private http: HttpClient) {
         super();
     }
 

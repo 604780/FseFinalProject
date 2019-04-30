@@ -12,6 +12,7 @@ namespace ProjectManager
     {
         public static void Register(HttpConfiguration config)
         {
+            config.EnableCors();
             config.MapHttpAttributeRoutes();
 
             config.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Never;

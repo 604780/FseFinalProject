@@ -5,9 +5,11 @@ using System.Web.Http;
 using ProjectManager.ActionFilters;
 using System.Collections.Generic;
 using System;
+using System.Web.Http.Cors;
 
 namespace ProjectManager.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class TaskController : ApiController
     {
         TaskBC taskObj = null;

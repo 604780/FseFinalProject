@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Response } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Task } from '../models/task';
 import { map, catchError } from 'rxjs/operators';
@@ -8,7 +9,7 @@ import { ParentTask } from '../models/parentTask';
 
 @Injectable()
 export class TaskService extends BaseService {
-    constructor(private http: Http) {
+    constructor(private http: HttpClient) {
         super();
     }
 

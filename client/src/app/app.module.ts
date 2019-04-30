@@ -5,10 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from "@angular/router";
 import { BsDatepickerModule, ModalModule } from 'ngx-bootstrap';
 import { Ng5SliderModule } from 'ng5-slider';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { UserService } from './services/user.service';
-import { HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './user/user.component';
 import { ToastrModule } from 'ngx-toastr';
 import { EventService } from './services/event.service';
@@ -53,7 +52,7 @@ const routes: Routes = [
     }),
     Ng5SliderModule
   ],
-  providers: [UserService, EventService, BaseService, ProjectService,TaskService],
+  providers: [BaseService,UserService, EventService, ProjectService,TaskService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
