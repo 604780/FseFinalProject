@@ -86,7 +86,7 @@ export class ProjectComponent implements OnInit {
 
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
-
+    document.getElementsByTagName("modal-container")[0].classList.remove("fade");
 
   }
   setIndex(index: number) {

@@ -15,7 +15,7 @@ export class ProjectService extends BaseService {
     getProject(): Observable<Project[]> {
         return this.http.get(super.baseurl() + 'api/project')
             .pipe(map((res: Response) => {
-                const data = super.extractData(res);
+                const data = res["data"];
                 return data;
             }))
             .pipe(catchError(this.handleError));
@@ -23,7 +23,7 @@ export class ProjectService extends BaseService {
     addProject(project:Project): Observable<any> {
         return this.http.post(super.baseurl() + 'api/project/add',project)
             .pipe(map((res: Response) => {
-                const data = super.extractData(res);
+                const data = res["data"];
                 return data;
             }))
             .pipe(catchError(this.handleError));
@@ -32,7 +32,7 @@ export class ProjectService extends BaseService {
     updateProject(project:Project): Observable<any> {
         return this.http.post(super.baseurl() + 'api/project/update',project)
             .pipe(map((res: Response) => {
-                const data = super.extractData(res);
+                const data = res["data"];
                 return data;
             }))
             .pipe(catchError(this.handleError));
@@ -41,7 +41,7 @@ export class ProjectService extends BaseService {
     deleteProject(project:Project): Observable<any> {
         return this.http.post(super.baseurl() + 'api/project/delete',project)
             .pipe(map((res: Response) => {
-                const data = super.extractData(res);
+                const data = res["data"];
                 return data;
             }))
             .pipe(catchError(this.handleError));

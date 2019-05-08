@@ -142,6 +142,7 @@ export class AddTaskComponent implements OnInit {
       this.projectService.getProject().subscribe((project) => {
         this.projects = project;
         this.modalRef = this.modalService.show(template);
+        document.getElementsByTagName("modal-container")[0].classList.remove("fade");
         this.eventService.showLoading(false);
       },
         (error) => {
@@ -155,6 +156,7 @@ export class AddTaskComponent implements OnInit {
         this.taskService.getParentTask().subscribe((parentTask) => {
           this.parentTasks = parentTask;
           this.modalRef = this.modalService.show(template);
+          document.getElementsByTagName("modal-container")[0].classList.remove("fade");
           this.eventService.showLoading(false);
         },
           (error) => {
@@ -171,6 +173,7 @@ export class AddTaskComponent implements OnInit {
         this.userService.getUser().subscribe((user) => {
           this.users = user;
           this.modalRef = this.modalService.show(template);
+          document.getElementsByTagName("modal-container")[0].classList.remove("fade");
           this.eventService.showLoading(false);
         },
           (error) => {

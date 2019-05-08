@@ -46,6 +46,7 @@ export class ViewTaskComponent implements OnInit {
   }
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
+    document.getElementsByTagName("modal-container")[0].classList.remove("fade");
   }
 
 

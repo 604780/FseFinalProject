@@ -15,7 +15,7 @@ export class UserService extends BaseService {
     getUser(): Observable<User[]> {
         return this.http.get(super.baseurl() + 'api/user')
             .pipe(map((res: Response) => {
-                const data = super.extractData(res);
+                const data = res["data"];
                 return data;
             }))
             .pipe(catchError(this.handleError));
@@ -24,7 +24,7 @@ export class UserService extends BaseService {
     addUser(user:User): Observable<any> {
         return this.http.post(super.baseurl() + 'api/user/add',user)
             .pipe(map((res: Response) => {
-                const data = super.extractData(res);
+                const data = res["data"];
                 return data;
             }))
             .pipe(catchError(this.handleError));
@@ -33,7 +33,7 @@ export class UserService extends BaseService {
     updateUser(user:User): Observable<any> {
         return this.http.post(super.baseurl() + 'api/user/update',user)
             .pipe(map((res: Response) => {
-                const data = super.extractData(res);
+                const data = res["data"];
                 return data;
             }))
             .pipe(catchError(this.handleError));
@@ -42,7 +42,7 @@ export class UserService extends BaseService {
    deleteUser(user:User): Observable<any> {
         return this.http.post(super.baseurl() + 'api/user/delete',user)
             .pipe(map((res: Response) => {
-                const data = super.extractData(res);
+                const data = res["data"];
                 return data;
             }))
             .pipe(catchError(this.handleError));

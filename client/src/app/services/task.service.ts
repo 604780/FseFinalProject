@@ -16,7 +16,7 @@ export class TaskService extends BaseService {
     getParentTask(): Observable<ParentTask[]> {
         return this.http.get(super.baseurl() + 'api/task/parent')
             .pipe(map((res: Response) => {
-                const data = super.extractData(res);
+                const data = res["data"];
                 return data;
             }))
             .pipe(catchError(this.handleError));
@@ -24,7 +24,7 @@ export class TaskService extends BaseService {
     addTask(task:Task): Observable<any> {
         return this.http.post(super.baseurl() + 'api/task/add',task)
             .pipe(map((res: Response) => {
-                const data = super.extractData(res);
+                const data = res["data"];
                 return data;
             }))
             .pipe(catchError(this.handleError));
@@ -33,7 +33,7 @@ export class TaskService extends BaseService {
     getAllTasksByProjectId(projectId:number):Observable<Task[]>{
         return this.http.get(super.baseurl() + 'api/task?projectId='+projectId)
         .pipe(map((res: Response) => {
-            const data = super.extractData(res);
+            const data = res["data"];
             return data;
         }))
         .pipe(catchError(this.handleError));
@@ -42,7 +42,7 @@ export class TaskService extends BaseService {
     updateTask(task:Task): Observable<any> {
         return this.http.post(super.baseurl() + 'api/task/update',task)
             .pipe(map((res: Response) => {
-                const data = super.extractData(res);
+                const data = res["data"];
                 return data;
             }))
             .pipe(catchError(this.handleError));
@@ -51,7 +51,7 @@ export class TaskService extends BaseService {
     deleteTask(task:Task): Observable<any> {
         return this.http.post(super.baseurl() + 'api/task/delete',task)
             .pipe(map((res: Response) => {
-                const data = super.extractData(res);
+                const data = res["data"];
                 return data;
             }))
             .pipe(catchError(this.handleError));
